@@ -127,25 +127,65 @@ cp .env.example .env
 
 3. **Edit file `.env` dengan konfigurasi yang sesuai:**
 ```env
+# Domain & URLs
+DOMAIN=https://your-domain.com
+CLIENT_URL=https://your-domain.com
+FRONTEND_URL=https://your-domain.com
+BACKEND_URL=https://your-domain.com
+
 # Server
 PORT=5000
 SERVER_HOST=0.0.0.0
-CLIENT_URL=http://localhost:3000
 
 # Database
+POSTGRES_HOST=localhost
+POSTGRES_PORT=5432
 POSTGRES_USER=yourapp_db
-POSTGRES_PASSWORD=password123
+POSTGRES_PASSWORD=your_postgres_password
 POSTGRES_DB=yourapp
+POSTGRES_SSLMODE=disable
 
-# JWT
+# JWT & Authentication
 JWT_SECRET=your_jwt_secret_key
+NEXTAUTH_SECRET=your_nextauth_secret_key
+NEXTAUTH_URL=https://your-domain.com
 
 # Google OAuth
 GOOGLE_CLIENT_ID=your_google_client_id
 GOOGLE_CLIENT_SECRET=your_google_client_secret
+NEXT_PUBLIC_GOOGLE_CLIENT_ID=your_google_client_id
 
 # Kolosal AI
+KOLOSAL_API_URL=https://api.kolosal.ai
 KOLOSAL_API_KEY=your_kolosal_api_key
+
+# Cloudinary (optional)
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+NEXT_PUBLIC_CLOUDINARY_API_KEY=your_cloudinary_api_key
+NEXT_PUBLIC_CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+
+# RabbitMQ
+RABBITMQ_HOST=localhost
+RABBITMQ_PORT=5672
+RABBITMQ_USER=yourapp
+RABBITMQ_PASSWORD=your_rabbitmq_password
+
+# Email Configuration
+EMAIL_FROM=your_email@gmail.com
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USERNAME=your_email@gmail.com
+SMTP_PASSWORD=your_smtp_app_password
+
+# LiveKit Configuration
+LIVEKIT_URL=wss://your-domain.com/rtc
+LIVEKIT_API_KEY=your_livekit_api_key
+LIVEKIT_API_SECRET=your_livekit_api_secret
+
+# Redis (optional)
+REDIS_HOST=localhost
+REDIS_PORT=6379
+REDIS_PASSWORD=
 ```
 
 4. **Jalankan semua services:**
@@ -368,24 +408,16 @@ Pastikan Anda telah mengkonfigurasi environment variables dengan benar:
 - **Backend**: File `.env` di folder `backend/`
 - **Frontend**: File `.env` atau `.env.local` di folder `frontend/`
 
+> **⚠️ PENTING - Security:**
+> - **JANGAN** commit file `.env` atau `.env.local` ke repository Git
+> - Pastikan file `.env*` sudah ada di `.gitignore`
+> - Gunakan placeholder seperti `your_api_key`, `your_secret_key` di dokumentasi
+> - Untuk production, set environment variables di hosting platform (Vercel, Railway, dll)
+> - Generate secret keys yang kuat dan unik untuk setiap environment
+
 Lihat dokumentasi masing-masing untuk detail lengkap:
 - [Backend Environment Variables](./backend/README.md#environment-variables)
-- [Frontend Environment Variables](./frontend/README.md)
-
----
-
-## 📊 Project Dashboard
-
-<div align="center">
-
-| Metric | Value |
-|--------|-------|
-| **Active Projects** | 12 |
-| **Completed** | 89 |
-| **Weekly Progress** | 78% |
-| **AI Insight** | You're 23% ahead of schedule! |
-
-</div>
+- [Frontend Environment Variables](./frontend/README.md#-environment-variables)
 
 ---
 
