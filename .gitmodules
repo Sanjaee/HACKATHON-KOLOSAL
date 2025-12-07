@@ -1,9 +1,0 @@
-[submodule "backend"]
-	path = backend
-	url = https://github.com/Sanjaee/BE-HACKATHON-ZOOM-AI-KOLOSAL.git
-[submodule "frontend"]
-	path = frontend
-	url = https://github.com/Sanjaee/HACKATHON-ZOOM-AI-KOLOSAL.git
-[submodule "mobile"]
-	path = mobile
-	url = https://github.com/Sanjaee/MOBILE-HACKATHON-ZOOM-AI-KOLOSAL.git
